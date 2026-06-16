@@ -32,8 +32,7 @@ public class AdjustShooter extends Command {
     @Override
     public void execute() {
         Pose2d robotPose = m_drivetrain.getState().Pose;
-        Pose2d shooterPose = robotPose.plus(SwerveConstants.robotToShooter);
-
+        Pose2d shooterPose = robotPose.plus(SwerveConstants.robotToShooter);   
         Translation2d targetLocation = GetTargetLocation.getTargetLocation(robotPose, m_drivetrain.getState().Speeds);
         if (targetLocation == null) {
             distancePub.set(0);
@@ -53,6 +52,7 @@ public class AdjustShooter extends Command {
             0.0,
             ShooterConstants.kMaxFlywheelRPS
         );
+
         Double hoodAngle = 68.0;
 
         if (DriverStation.isTeleop()) {
