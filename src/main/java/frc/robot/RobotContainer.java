@@ -133,8 +133,8 @@ public class RobotContainer {
             drivetrain.applyRequest(() -> {
                     CommandSwerveDrivetrain.joyStickPolar(driverInputs, driver);
 
-                    return drive.withVelocityX(driverInputs[0]*0.4) // Drive forward with negative Y (forward)
-                        .withVelocityY(driverInputs[1]*0.4) // Drive left with negative X (left)
+                    return drive.withVelocityX(driverInputs[0]) // Drive forward with negative Y (forward)
+                        .withVelocityY(driverInputs[1]) // Drive left with negative X (left)
                         .withRotationalRate(driverInputs[2]); // Drive counterclockwise with negative X (left)
             })
         ));
